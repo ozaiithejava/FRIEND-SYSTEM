@@ -17,14 +17,14 @@ async function main() {
     const user1 = new UserModel({
       username: 'user1',
       email: 'user1@example.com',
-      password: 'password123', // Bu gerçek bir şifre değeridir, güvenlik açısından hash kullanılmalıdır.
+      password: 'password123', // Bu gerçek bir şifre değeridir, güvenlik açısından sha256 vb kullanılmalıdır.
       fullName: 'User One',
     });
 
     const user2 = new UserModel({
       username: 'user2',
       email: 'user2@example.com',
-      password: 'password456', // Bu gerçek bir şifre değeridir, güvenlik açısından hash kullanılmalıdır.
+      password: 'password456', 
       fullName: 'User Two',
     });
 
@@ -47,11 +47,11 @@ async function main() {
   } catch (error) {
     console.error('An error occurred:', error.message);
   } finally {
-    // MongoDB bağlantısını kapat
+    // MongoDB bağlantısını sonlandır
     mongoose.disconnect();
   }
 }
 
-// Ana fonksiyonu çalıştır
+// Ana fonksiyonu çağıralım
 main();
 ```
